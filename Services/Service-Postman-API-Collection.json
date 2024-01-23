@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "050f50a7-eb4d-44ce-83d2-33d5adfaa494",
+		"name": "02-Service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22528803"
+	},
+	"item": [
+		{
+			"name": "01-List all Services",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/services",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02-Create a Service",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"serviceDisplayName\": \"Sample Service\",\r\n  \"serviceDescription\": \"This is a sample service description.\",\r\n  \"serviceType\": \"Sample Type\",\r\n  \"createdBy\": \"John Doe\",\r\n  \"modifiedBy\": \"Jane Smith\",\r\n  \"uom\": \"Units\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/services",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"services"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03-Get a Service",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/services/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"services",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04-Update Service",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"serviceDisplayName\": \"Updated Service\",\r\n  \"serviceDescription\": \"This is an updated service description.\",\r\n  \"serviceType\": \"Updated Type\",\r\n  \"modifiedBy\": \"Alice Johnson\",\r\n  \"uom\": \"Pieces\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/services/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"services",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05-Delete Service",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/services/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"services",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

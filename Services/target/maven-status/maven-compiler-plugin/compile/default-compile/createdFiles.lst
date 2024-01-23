@@ -1,0 +1,5 @@
+org\services\controller\ServicesController.class
+org\services\service\ServicesService.class
+org\services\ServicesApplication.class
+org\services\domain\Services.class
+org\services\repository\ServicesRepository.class

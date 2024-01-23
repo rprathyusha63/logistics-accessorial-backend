@@ -1,0 +1,5 @@
+org\users\repository\UserRepository.class
+org\users\controllers\UserController.class
+org\users\UserApplication.class
+org\users\domain\User.class
+org\users\services\UserService.class

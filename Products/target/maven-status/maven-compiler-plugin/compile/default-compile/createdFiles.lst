@@ -1,0 +1,5 @@
+org\product\service\ProductService.class
+org\product\controller\ProductControllers.class
+org\product\ProductApplication.class
+org\product\domain\Product.class
+org\product\repository\ProductRepository.class

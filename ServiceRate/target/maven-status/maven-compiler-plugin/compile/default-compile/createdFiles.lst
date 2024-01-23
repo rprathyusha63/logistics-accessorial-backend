@@ -1,0 +1,6 @@
+org\servicerate\ServiceRateApplication.class
+org\servicerate\domain\ServiceRate$Status.class
+org\servicerate\repository\ServiceRateRepository.class
+org\servicerate\controller\ServiceRateController.class
+org\servicerate\domain\ServiceRate.class
+org\servicerate\service\ServiceRateService.class

@@ -1,0 +1,121 @@
+{
+	"info": {
+		"_postman_id": "7fe42568-5da9-4309-9b92-5b8232abf8c2",
+		"name": "01-Warehouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "22528803"
+	},
+	"item": [
+		{
+			"name": "01-List all Warehouses",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/warehouses",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "02-Create a Warehouse",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"warehouseName\": \"Test Warehouse\",\r\n    \"warehouseLocation\": \"123 Main St, City, Country\",\r\n    \"warehouseManager\": \"John Doe\",\r\n    \"warehouseContactNumber\": \"+1 123-456-7890\",\r\n    \"warehouseEmail\": \"john.doe@example.com\",\r\n    \"warehouseCapacity\": 1000,\r\n    \"warehouseType\": \"Storage\",\r\n    \"warehouseStatus\": \"ACTIVE\",\r\n    \"warehouseOperatingHours\": \"9:00 AM - 5:00 PM\",\r\n    \"createdBy\": \"Admin\",\r\n    \"modifiedBy\": \"Admin\",\r\n    \"notes\": \"Sample notes for testing\"\r\n}\r\n\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/warehouses",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "03-Get a Warehouse",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/warehouses/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "04-Update Warehouse",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"warehouseName\": \"Updated Warehouse Name\",\r\n    \"warehouseLocation\": \"456 Updated St, New City, New Country\",\r\n    \"warehouseManager\": \"Jane Smith\",\r\n    \"warehouseContactNumber\": \"+1 987-654-3210\",\r\n    \"warehouseEmail\": \"jane.smith@example.com\",\r\n    \"warehouseCapacity\": 1500,\r\n    \"warehouseType\": \"Distribution Center\",\r\n    \"warehouseStatus\": \"ACTIVE\",\r\n    \"warehouseOperatingHours\": \"8:00 AM - 6:00 PM\",\r\n    \"modifiedBy\": \"Admin\",\r\n    \"notes\": \"Updated warehouse details for testing\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/warehouses/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "05-Delete Warehouse",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/warehouses/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"warehouses",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

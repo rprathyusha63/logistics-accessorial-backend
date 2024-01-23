@@ -1,0 +1,5 @@
+org\roles\entity\Roles.class
+org\roles\controllers\RoleController.class
+org\roles\services\RoleService.class
+org\roles\repository\RoleRepository.class
+org\roles\RoleApplication.class

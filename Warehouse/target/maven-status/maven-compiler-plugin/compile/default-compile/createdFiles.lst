@@ -1,0 +1,6 @@
+org\warehouse\service\WarehouseService.class
+org\warehouse\controller\WarehouseController.class
+org\warehouse\repository\WarehouseRepository.class
+org\warehouse\domain\Warehouse$WarehouseStatus.class
+org\warehouse\domain\Warehouse.class
+org\warehouse\WarehouseApplication.class

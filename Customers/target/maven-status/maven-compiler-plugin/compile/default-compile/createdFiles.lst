@@ -1,0 +1,5 @@
+org\customers\repository\CustomerRepository.class
+org\customers\CustomerApplication.class
+org\customers\services\CustomerService.class
+org\customers\entity\Customer.class
+org\customers\controllers\CustomerController.class
