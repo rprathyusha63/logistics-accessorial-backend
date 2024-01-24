@@ -22,7 +22,11 @@ public class VendorProductService {
 	public List<VendorProduct> getAllVendorProducts() {
 		return vendorProductRepository.findAll();
 	}
-	public List<VendorProduct> getAllVendorProductsByVendorId(long vendorid) {
+	public List<VendorProduct> getAllVendorProductsByVendorId(String vendorid) {
 		return vendorProductRepository.findVendorProductsByVendorId(vendorid);
+	}
+
+	public VendorProduct saveVendorProduct(VendorProduct vendorProduct){
+		return vendorProductRepository.save(vendorProduct);
 	}
 	}

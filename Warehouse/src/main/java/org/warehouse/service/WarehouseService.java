@@ -21,7 +21,7 @@ public class WarehouseService {
         return warehouseRepository.findAll();
     }
 
-    public Warehouse getWarehouseById(Long id) {
+    public Warehouse getWarehouseById(String id) {
         return warehouseRepository.findById(id).orElse(null);
     }
 
@@ -29,7 +29,7 @@ public class WarehouseService {
         return warehouseRepository.save(warehouse);
     }
 
-    public Long deleteWarehouse(Long id) {
+    public String deleteWarehouse(String id) {
         if (warehouseRepository.existsById(id)) {
             warehouseRepository.deleteById(id);
             return id;

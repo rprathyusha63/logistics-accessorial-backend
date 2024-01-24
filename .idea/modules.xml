@@ -2,16 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Customers/Customers.iml" filepath="$PROJECT_DIR$/Customers/Customers.iml" />
-      <module fileurl="file://$PROJECT_DIR$/LogisticsPortal.iml" filepath="$PROJECT_DIR$/LogisticsPortal.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Order/Order.iml" filepath="$PROJECT_DIR$/Order/Order.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Products/Products.iml" filepath="$PROJECT_DIR$/Products/Products.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Roles/Roles.iml" filepath="$PROJECT_DIR$/Roles/Roles.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ServiceRate/ServiceRate.iml" filepath="$PROJECT_DIR$/ServiceRate/ServiceRate.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Services/Services.iml" filepath="$PROJECT_DIR$/Services/Services.iml" />
-      <module fileurl="file://$PROJECT_DIR$/UserAuth/UserAuth.iml" filepath="$PROJECT_DIR$/UserAuth/UserAuth.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Users/Users.iml" filepath="$PROJECT_DIR$/Users/Users.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Warehouse/Warehouse.iml" filepath="$PROJECT_DIR$/Warehouse/Warehouse.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Accessorials/Accessorials.iml" filepath="$PROJECT_DIR$/Accessorials/Accessorials.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Vendors/Vendors.iml" filepath="$PROJECT_DIR$/Vendors/Vendors.iml" />
+      <module fileurl="file://$PROJECT_DIR$/WarehouseAccessorialRates/WarehouseAccessorialRates.iml" filepath="$PROJECT_DIR$/WarehouseAccessorialRates/WarehouseAccessorialRates.iml" />
     </modules>
   </component>
 </project>

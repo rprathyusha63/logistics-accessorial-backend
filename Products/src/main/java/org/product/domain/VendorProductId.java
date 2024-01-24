@@ -9,34 +9,34 @@ import java.util.Objects;
 @Embeddable
 public class VendorProductId implements Serializable {
     @Column(name = "vendor_id")
-    private long vendor_id;
+    private String vendor_id;
 
     @Column(name="product_id")
-    private long product_id;
+    private String product_id;
 
     public VendorProductId() {
     }
 
-    public VendorProductId(long vendor_id, long product_id) {
+    public VendorProductId(String vendor_id, String product_id) {
         this.vendor_id = vendor_id;
         this.product_id = product_id;
     }
 
     // getters and setters...
 
-    public long getVendor_id() {
+    public String getVendor_id() {
         return vendor_id;
     }
 
-    public void setVendor_id(long vendor_id) {
+    public void setVendor_id(String vendor_id) {
         this.vendor_id = vendor_id;
     }
 
-    public long getProduct_id() {
+    public String getProduct_id() {
         return product_id;
     }
 
-    public void setProduct_id(long product_id) {
+    public void setProduct_id(String product_id) {
         this.product_id = product_id;
     }
 

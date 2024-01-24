@@ -13,9 +13,11 @@ import lombok.NoArgsConstructor;
 public class Vendor {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "vendor_id")
-    private Long vendor_id;
+    private String vendorId;
+
+    @Column(name = "warehouse_id")
+    private String warehouseId;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "warehouse_id", insertable = false, updatable = false)
@@ -24,25 +26,16 @@ public class Vendor {
     @Column(name = "vendor_business_name")
     private String businessName;
 
-    @Column(name = "vendor_first_name")
-    private String firstName;
-
-    @Column(name = "vendor_last_name")
-    private String lastName;
-
     @Column(name = "vendor_type")
     private String type;
 
-    @Column(name = "vendor_email")
+    @Column(name = "email")
     private String email;
 
-    @Column(name = "vendor_phone")
+    @Column(name = "phone")
     private String phone;
 
-    @Column(name = "vendor_address")
-    private String address;
-
-    @Column(name = "notes")
-    private String notes;
+    @Column(name = "location")
+    private String location;
 
 }

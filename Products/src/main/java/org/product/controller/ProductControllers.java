@@ -20,26 +20,17 @@ import java.util.List;
 @RequestMapping("/products")
 public class ProductControllers {
 	private final ProductService productService;
-	private final ProductCategoryService productCategoryService;
+
 
 	@Autowired
 	public ProductControllers(ProductService productService, ProductCategoryService productCategoryService) {
 		this.productService = productService;
-		this.productCategoryService=productCategoryService;
 	}
 
 	@GetMapping
 	public Flux<ResponseEntity<Product>> getProducts() {
 
 		return Flux.fromIterable(productService.getAllProducts())
-				.map(ResponseEntity::ok)
-				.defaultIfEmpty(ResponseEntity.notFound().build());
-	}
-
-	@GetMapping("/categories")
-	public Flux<ResponseEntity<ProductCategory>> getAllCategories() {
-
-		return Flux.fromIterable(productCategoryService.getAllCategories())
 				.map(ResponseEntity::ok)
 				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
@@ -69,15 +60,16 @@ public class ProductControllers {
 	public Mono<ResponseEntity<?>> updateProduct(@PathVariable int productID, @RequestBody Product product) {
 		Product existProduct = productService.getProductbyID(productID);
 		if (existProduct != null) {
-			existProduct.setProductName(product.getProductName());
+			existProduct.setProductModel(product.getProductModel());
 
 			existProduct.setCategory(product.getCategory());
-			existProduct.setDesc(product.getDesc());
-			existProduct.setDimensions(product.getDimensions());
-			existProduct.setStorageConditions(product.getStorageConditions());
-			existProduct.setWeight(product.getWeight());
 			existProduct.setBrand(product.getBrand());
-			existProduct.setGender(product.getGender());
+			existProduct.setSize(product.getSize());
+			existProduct.setWeight(product.getWeight());
+			existProduct.setDimensions(product.getDimensions());
+			existProduct.setSkuNumber(product.getSkuNumber());
+			existProduct.setMaterial(product.getMaterial());
+			existProduct.setNoOfPieces(product.getNoOfPieces());
 			Product updatedProductEntity = productService.saveProduct(existProduct);
 
 			return Mono.just(ResponseEntity.ok(updatedProductEntity));

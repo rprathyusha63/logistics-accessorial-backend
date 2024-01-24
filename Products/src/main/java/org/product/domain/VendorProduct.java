@@ -13,9 +13,15 @@ public class VendorProduct {
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "vendor_id", referencedColumnName = "vendor_id", insertable = false, updatable = false)
-	private Vendor vendor_id;
+	private Vendor vendor;
 
 	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "product_id", referencedColumnName = "product_id", insertable = false, updatable = false)
-	private Product product_id;
+	private Product product;
+
+	@Column(name = "quantity")
+	private String quantity;
+
+	@Column(name = "product_warehouse_plot")
+	private String product_warehouse_plot;
 	}

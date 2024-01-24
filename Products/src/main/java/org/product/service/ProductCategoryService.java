@@ -22,5 +22,25 @@ public class ProductCategoryService {
 	public List<ProductCategory> getAllCategories() {
 		return productCategoryRepository.findAll();
 	}
+	public ProductCategory getCategoryById(String categoryId) {
+		return productCategoryRepository.findById(categoryId).get();
+	}
 
+	public ProductCategory saveCategory(ProductCategory category) {
+		return productCategoryRepository.save(category);
+	}
+
+	public ProductCategory updateCategory(ProductCategory category) {
+		return productCategoryRepository.save(category);
+
+	}
+
+	public String deleteCategory(String categoryId) {
+		if (productCategoryRepository.existsById(categoryId)) {
+			productCategoryRepository.deleteById(categoryId);
+			return categoryId;
+		} else {
+			return "";
+		}
+	}
 	}

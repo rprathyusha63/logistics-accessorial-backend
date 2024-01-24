@@ -10,7 +10,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface VendorProductRepository extends JpaRepository<VendorProduct, VendorProductId> {
-    @Query("SELECT u FROM VendorProduct u WHERE u.warehouse.warehouseId = :warehouse_id")
+    @Query("SELECT u FROM VendorProduct u WHERE u.vendor.vendorId = :vendor_id")
     List<VendorProduct> findVendorProductsByVendorId(
-            @Param("warehouse_id") long warehouse_id);
+            @Param("vendor_id") String vendor_id);
 }

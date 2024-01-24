@@ -11,6 +11,7 @@ import reactor.core.publisher.Mono;
 
 import java.sql.Timestamp;
 import java.util.Date;
+import java.util.UUID;
 
 @CrossOrigin
 @RestController
@@ -33,8 +34,8 @@ public class WarehouseController {
 
     // Get Warehouse by ID
     @GetMapping("/{warehouseId}")
-    public Mono<ResponseEntity<?>> getWarehouse(@PathVariable int warehouseId) {
-        Warehouse warehouse = warehouseService.getWarehouseById((long) warehouseId);
+    public Mono<ResponseEntity<?>> getWarehouse(@PathVariable String warehouseId) {
+        Warehouse warehouse = warehouseService.getWarehouseById((warehouseId));
         if (warehouse != null) {
             return Mono.just(ResponseEntity.status(HttpStatus.OK).body(warehouse));
         } else {
@@ -46,30 +47,25 @@ public class WarehouseController {
     // Create a Warehouse
     @PostMapping
     public Mono<ResponseEntity<Warehouse>> createWarehouse(@RequestBody Warehouse warehouse) {
+        warehouse.setWarehouseId(UUID.randomUUID().toString());
         warehouse.setCreatedOn(new Timestamp(new Date().getTime()));
-        warehouse.setModifiedOn(new Timestamp(new Date().getTime()));
         Warehouse savedWarehouse = warehouseService.saveWarehouse(warehouse);
         return Mono.just(ResponseEntity.status(HttpStatus.CREATED).body(savedWarehouse));
     }
 
     // Update a Warehouse
     @PutMapping("/{warehouseId}")
-    public Mono<ResponseEntity<?>> updateWarehouse(@PathVariable int warehouseId,
+    public Mono<ResponseEntity<?>> updateWarehouse(@PathVariable String warehouseId,
             @RequestBody Warehouse updatedWarehouse) {
-        Warehouse existingWarehouse = warehouseService.getWarehouseById((long) warehouseId);
+        Warehouse existingWarehouse = warehouseService.getWarehouseById(warehouseId);
         if (existingWarehouse != null) {
             existingWarehouse.setWarehouseName(updatedWarehouse.getWarehouseName());
-            existingWarehouse.setAddress(updatedWarehouse.getAddress());
+            existingWarehouse.setLocation(updatedWarehouse.getLocation());
             existingWarehouse.setWarehouseManager(updatedWarehouse.getWarehouseManager());
-            existingWarehouse.setWarehouseContactNumber(updatedWarehouse.getWarehouseContactNumber());
-            existingWarehouse.setWarehouseEmail(updatedWarehouse.getWarehouseEmail());
-            existingWarehouse.setWarehouseCapacity(updatedWarehouse.getWarehouseCapacity());
-            existingWarehouse.setWarehouseType(updatedWarehouse.getWarehouseType());
+            existingWarehouse.setPhone(updatedWarehouse.getPhone());
+            existingWarehouse.setEmail(updatedWarehouse.getEmail());
             existingWarehouse.setWarehouseStatus(updatedWarehouse.getWarehouseStatus());
             existingWarehouse.setWarehouseOperatingHours(updatedWarehouse.getWarehouseOperatingHours());
-            existingWarehouse.setModifiedOn(new Timestamp(new Date().getTime()));
-            existingWarehouse.setModifiedBy(updatedWarehouse.getModifiedBy());
-            existingWarehouse.setNotes(updatedWarehouse.getNotes());
 
             Warehouse updatedWarehouseEntity = warehouseService.saveWarehouse(existingWarehouse);
 
@@ -82,8 +78,8 @@ public class WarehouseController {
 
     // Delete a Warehouse
     @DeleteMapping("/{id}")
-    public Mono<ResponseEntity<String>> deleteWarehouse(@PathVariable Long id) {
-        Long deletedId = warehouseService.deleteWarehouse(id);
+    public Mono<ResponseEntity<String>> deleteWarehouse(@PathVariable String id) {
+        String deletedId = warehouseService.deleteWarehouse(id);
 
         if (deletedId != null) {
             return Mono.just(ResponseEntity.status(HttpStatus.OK)

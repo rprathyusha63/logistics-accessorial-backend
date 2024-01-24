@@ -1,22 +1,22 @@
 {
 	"info": {
-		"_postman_id": "7fe42568-5da9-4309-9b92-5b8232abf8c2",
-		"name": "01-Warehouse",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "22528803"
+		"_postman_id": "9ac84953-031b-419e-b1e8-6f91c45041ca",
+		"name": "warehouse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
-			"name": "01-List all Warehouses",
+			"name": "AllWarehouses",
 			"request": {
 				"method": "GET",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/warehouses",
+					"raw": "http://localhost:8092/warehouses",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8092",
 					"path": [
 						"warehouses"
 					]
@@ -25,13 +25,33 @@
 			"response": []
 		},
 		{
-			"name": "02-Create a Warehouse",
+			"name": "WarehouseByID",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8092/warehouses/488a3f80-e5b3-450f-8c68-a9c260bd98fa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8092",
+					"path": [
+						"warehouses",
+						"488a3f80-e5b3-450f-8c68-a9c260bd98fa"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CreateWarehouses",
 			"request": {
 				"method": "POST",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"warehouseName\": \"Test Warehouse\",\r\n    \"warehouseLocation\": \"123 Main St, City, Country\",\r\n    \"warehouseManager\": \"John Doe\",\r\n    \"warehouseContactNumber\": \"+1 123-456-7890\",\r\n    \"warehouseEmail\": \"john.doe@example.com\",\r\n    \"warehouseCapacity\": 1000,\r\n    \"warehouseType\": \"Storage\",\r\n    \"warehouseStatus\": \"ACTIVE\",\r\n    \"warehouseOperatingHours\": \"9:00 AM - 5:00 PM\",\r\n    \"createdBy\": \"Admin\",\r\n    \"modifiedBy\": \"Admin\",\r\n    \"notes\": \"Sample notes for testing\"\r\n}\r\n\r\n",
+					"raw": "{\r\n    \"warehouseName\": \"Fulfillment Distribution Center\",\r\n    \"location\": \"UT\",\r\n    \"warehouseManager\": \"Emmet\",\r\n    \"phone\": \"5556667777\",\r\n    \"email\": \"utwarehouse@gmail.com\",\r\n    \"warehouseStatus\": \"ACTIVE\",\r\n    \"warehouseOperatingHours\": \"7 am - 7 pm\",\r\n    \"createdBy\": \"admin\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -39,11 +59,12 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/warehouses",
+					"raw": "http://localhost:8092/warehouses",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8092",
 					"path": [
 						"warehouses"
 					]
@@ -52,32 +73,13 @@
 			"response": []
 		},
 		{
-			"name": "03-Get a Warehouse",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "localhost:8080/warehouses/1",
-					"host": [
-						"localhost"
-					],
-					"port": "8080",
-					"path": [
-						"warehouses",
-						"1"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "04-Update Warehouse",
+			"name": "UpdateWarehouses",
 			"request": {
 				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"warehouseName\": \"Updated Warehouse Name\",\r\n    \"warehouseLocation\": \"456 Updated St, New City, New Country\",\r\n    \"warehouseManager\": \"Jane Smith\",\r\n    \"warehouseContactNumber\": \"+1 987-654-3210\",\r\n    \"warehouseEmail\": \"jane.smith@example.com\",\r\n    \"warehouseCapacity\": 1500,\r\n    \"warehouseType\": \"Distribution Center\",\r\n    \"warehouseStatus\": \"ACTIVE\",\r\n    \"warehouseOperatingHours\": \"8:00 AM - 6:00 PM\",\r\n    \"modifiedBy\": \"Admin\",\r\n    \"notes\": \"Updated warehouse details for testing\"\r\n}\r\n",
+					"raw": "{\r\n    \"warehouseName\": \"Fulfillment DC\",\r\n    \"location\": \"UT\",\r\n    \"warehouseManager\": \"Emmet\",\r\n    \"phone\": \"5556667777\",\r\n    \"email\": \"utwarehouse@gmail.com\",\r\n    \"warehouseStatus\": \"ACTIVE\",\r\n    \"warehouseOperatingHours\": \"7 am - 7 pm\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -85,33 +87,35 @@
 					}
 				},
 				"url": {
-					"raw": "localhost:8080/warehouses/1",
+					"raw": "http://localhost:8092/warehouses/f475b884-9af0-420d-bedc-cb77f58f658d",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8092",
 					"path": [
 						"warehouses",
-						"1"
+						"f475b884-9af0-420d-bedc-cb77f58f658d"
 					]
 				}
 			},
 			"response": []
 		},
 		{
-			"name": "05-Delete Warehouse",
+			"name": "DeleteWarehouses",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "localhost:8080/warehouses/1",
+					"raw": "http://localhost:8092/warehouses/f475b884-9af0-420d-bedc-cb77f58f658d",
+					"protocol": "http",
 					"host": [
 						"localhost"
 					],
-					"port": "8080",
+					"port": "8092",
 					"path": [
 						"warehouses",
-						"1"
+						"f475b884-9af0-420d-bedc-cb77f58f658d"
 					]
 				}
 			},

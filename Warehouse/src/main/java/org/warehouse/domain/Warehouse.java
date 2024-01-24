@@ -11,30 +11,23 @@ import java.sql.Timestamp;
 public class Warehouse {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "warehouse_id")
-    private Long warehouseId;
+    private String warehouseId;
 
     @Column(name = "warehouse_name")
     private String warehouseName;
 
-    @Column(name = "address")
-    private String address;
+    @Column(name = "location")
+    private String location;
 
     @Column(name = "warehouse_manager")
     private String warehouseManager;
 
-    @Column(name = "warehouse_contact_number")
-    private String warehouseContactNumber;
+    @Column(name = "phone")
+    private String phone;
 
-    @Column(name = "warehouse_email")
-    private String warehouseEmail;
-
-    @Column(name = "capacity")
-    private int warehouseCapacity;
-
-    @Column(name = "warehouse_type")
-    private String warehouseType;
+    @Column(name = "email")
+    private String email;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "status")
@@ -49,19 +42,8 @@ public class Warehouse {
     @Column(name = "created_by")
     private String createdBy;
 
-    @Column(name = "modified_on")
-    private Timestamp modifiedOn;
-
-    @Column(name = "modified_by")
-    private String modifiedBy;
-
-    @Column(name = "notes")
-    private String notes;
-
     public enum WarehouseStatus {
         ACTIVE,
-        INACTIVE,
-        UNDER_MAINTENANCE,
-        OTHER_STATUS
+        INACTIVE
     }
 }

@@ -61,7 +61,7 @@ public class OrderController {
             existingOrder.setProductId(updatedOrder.getProductId());
             existingOrder.setServiceId(updatedOrder.getServiceId());
             existingOrder.setWarehouse(updatedOrder.getWarehouse());
-            existingOrder.setCustomer(updatedOrder.getCustomer());
+            existingOrder.setVendor(updatedOrder.getVendor());
             existingOrder.setProduct(updatedOrder.getProduct());
             existingOrder.setService(updatedOrder.getService());
             existingOrder.setUom(updatedOrder.getUom());

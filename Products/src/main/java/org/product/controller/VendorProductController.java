@@ -33,11 +33,18 @@ public class VendorProductController {
 				.defaultIfEmpty(ResponseEntity.notFound().build());
 	}
 	@GetMapping("/{vendor_id}")
-	public Flux<ResponseEntity<VendorProduct>> getVendorProductsByVendorId(@PathVariable long vendor_id) {
+	public Flux<ResponseEntity<VendorProduct>> getVendorProductsByVendorId(@PathVariable String vendor_id) {
 
 		return Flux.fromIterable(vendorProductService.getAllVendorProductsByVendorId(vendor_id))
 				.map(ResponseEntity::ok)
 				.defaultIfEmpty(ResponseEntity.notFound().build());
+	}
+
+	@PostMapping()
+	public Mono<ResponseEntity<VendorProduct>> getVendorProductsByVendorId(@RequestBody VendorProduct VendorProduct) {
+
+		VendorProduct savedVendorProduct =  vendorProductService.saveVendorProduct(VendorProduct);
+		return Mono.just(ResponseEntity.status(HttpStatus.CREATED).body(savedVendorProduct));
 	}
 
 }

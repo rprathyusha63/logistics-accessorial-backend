@@ -78,11 +78,11 @@
 
     <modules>
         <module>Products</module>
-        <module>Customers</module>
+        <module>Vendors</module>
         <module>Warehouse</module>
-        <module>Services</module>
+        <module>Accessorials</module>
         <module>Order</module>
-        <module>ServiceRate</module>
+        <module>WarehouseAccessorialRates</module>
         <module>Users</module>
         <module>Roles</module>
         <module>UserAuth</module>
